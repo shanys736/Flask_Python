@@ -14,7 +14,6 @@ def exercice(valeur):
             for k in range(i):
                 print("*", end="")
                 print()
-            etoiles +='<br>'
     return etoiles
 
 
