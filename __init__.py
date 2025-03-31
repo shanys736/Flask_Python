@@ -10,7 +10,7 @@ def exercice(valeur):
     for j in range(1, valeur+1):
         espaces="*(valeur-j)
         etoiles +=espaces +"(1*j-1)+'\n'
-        etoile +='</pre>'
+        etoiles +='</pre>'
     return etoiles
 
 
