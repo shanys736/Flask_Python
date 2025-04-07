@@ -6,12 +6,14 @@ app = Flask(__name__)
 
 @app.route('/<int:valeur>')
 def exercice(valeur):
-    etoiles = '<pre>'
-    for j in range(1, valeur+1):
-        espaces=" *(valeur-j)
-        etoiles +=espaces +"(1*j-1)+'\n'
-        etoiles +='</pre>'
-    return etoiles
+    nombre = ''
+    for j in range(valeur):
+        for i in range(valeur-j):
+            nombre += '+'
+            for k in range(j+1):
+                nombres += '*'
+                nombres += '<br>'
+    return nombres
 
 
 if __name__ == "__main__":
