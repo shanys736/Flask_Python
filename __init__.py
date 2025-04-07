@@ -1,15 +1,13 @@
-from flask import Flask
+n = int(input("Combien de nombres souhaitez-vous entrer ? "))
+max_value = None
 
-app = Flask(__name__)
+for i in range(n):
+    num = int(input(f"Entrez le nombre {i + 1}: "))
 
-@app.route('/<path:valeurs>')
-def exercice(valeurs):
-    liste_nombres = valeurs.split('/')
-    liste_nombres = [int(n) for n in liste_nombres]
-    resultat = 0
-    for n in liste_nombres:
-        resultat = resultat + n
-    return str(resultat)
+    if max_value is None:
+        max_value = num
+    elif num > max_value:
+        max_value = num
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+print("La valeur maximale est :", max_value)
+```
