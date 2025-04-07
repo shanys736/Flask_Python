@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/<int:valeur>')
 def exercice(valeur):
     pyramide = '<pre>'
-    for j in range(valeur):
+    for i in range(valeur):
             espaces=''*(valeur-i)
             chiffres=".join(str(j)for j in range(1,i+1))+".join(str(j) for j in range(1,0,-1))
             pyramide +=espaces+chiffres+'\n'
