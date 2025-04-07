@@ -1,23 +1,19 @@
-if name == "main":
-    app.run(debug=True)
-NOUVEAU
-[10:56]
 from flask import Flask
-from flask import rendertemplate
+from flask import render_template
 from flask import json
 
-app = Flask(name)
+app = Flask(__name__)
 
 @app.route('/<int:valeur>')
 def exercice(valeur):
     a, b = 0, 1
     sequence = [a, b]
-    for  in range(2, valeur):
+    for _ in range(2, valeur):
         a, b = b, a + b
         sequence.append(b)
-
+    
     fibonacci = '<pre>' + ', '.join(map(str, sequence)) + '</pre>'
     return fibonacci
 
-if name == "main":
+if __name__ == "__main__":
     app.run(debug=True)
