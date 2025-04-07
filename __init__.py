@@ -1,18 +1,23 @@
+if name == "main":
+    app.run(debug=True)
+NOUVEAU
+[10:56]
 from flask import Flask
-from flask import render_template
+from flask import rendertemplate
 from flask import json
 
-app = Flask(__name__)
+app = Flask(name)
 
 @app.route('/<int:valeur>')
 def exercice(valeur):
-    pyramide = '<pre>'
-    for i in range(1, valeur + 1):
-        espaces = ' ' * (valeur - i)
-        chiffres = ''.join(str(j) for j in range(1, i + 1)) + ''.join(str(j) for j in range(i - 1, 0, -1))
-        pyramide += espaces + chiffres + '\n'
-    pyramide += '</pre>'
-    return pyramide
+    a, b = 0, 1
+    sequence = [a, b]
+    for  in range(2, valeur):
+        a, b = b, a + b
+        sequence.append(b)
 
-if __name__ == "__main__":
+    fibonacci = '<pre>' + ', '.join(map(str, sequence)) + '</pre>'
+    return fibonacci
+
+if name == "main":
     app.run(debug=True)
